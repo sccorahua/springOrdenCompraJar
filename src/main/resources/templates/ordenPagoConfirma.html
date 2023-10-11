@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <html>
+        <head>
+            <title>Categoria</title>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+            <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" />
+            <script th:src="@{/js/jquery-3.2.1.min.js}" type="text/javascript"></script>
+            <script th:src="@{/js/bootstrap.min.js}" type="text/javascript"></script>
+            <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+            <title th:text="${@environment.getProperty('aplicacion.nombre')}"></title>
+            <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+            <link rel="stylesheet" href="assets/css/main.css" />
+            <style>
+                html,body,h1,h2,h3,h4,h5 {
+                    font-family: "Raleway", sans-serif
+                }
+            </style>
+        </head>
+        <body class="w3-light-grey">
+            <!--encimera-->
+            <div class="w3-bar w3-top w3-black w3-large" style="z-index:4">
+                <button class="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-light-grey" onclick="w3_open();"><i class="fa fa-bars"></i>  Menu</button>
+                <span class="w3-bar-item w3-right">Generador orden de compra</span>
+            </div>
+            <!--cabecera-->
+            <header class="w3-container" style="padding-top:22px">
+                <h5><b><i class="fa fa-dashboard"></i> Informacion</b></h5>
+            </header>
+
+            <h2 class="text-center mt-4">Se registro la categoria <strong><span th:text="${cat.nombre}"></span></strong> correctamente</h2>
+            <h4 class="text-center text-muted">Redirigiendo a la pagina principal en 5 segundos...</h4>
+            <!-- Footer -->
+            <footer class="w3-container w3-padding-16 w3-light-grey" style="bottom: 0; position: absolute">
+                <h4>GESTION DE ORDEN DE COMPRA</h4>
+                <p>Version 1.0 - SCN</p>
+            </footer>
+        </div>
+
+        <script>
+            // Get the Sidebar
+            var mySidebar = document.getElementById("mySidebar");
+
+            // Get the DIV with overlay effect
+            var overlayBg = document.getElementById("myOverlay");
+
+            // Toggle between showing and hiding the sidebar, and add overlay effect
+            function w3_open() {
+                if (mySidebar.style.display === 'block') {
+                    mySidebar.style.display = 'none';
+                    overlayBg.style.display = "none";
+                } else {
+                    mySidebar.style.display = 'block';
+                    overlayBg.style.display = "block";
+                }
+            }
+
+            // Close the sidebar with the close button
+            function w3_close() {
+                mySidebar.style.display = "none";
+                overlayBg.style.display = "none";
+            }
+            setTimeout(function () {
+                location.replace('/categoria');
+            }, 5000);
+        </script>
+
+
+    </body>
+</html>
